@@ -261,6 +261,19 @@ p {
 .google-map {
 	width: 100%;
 }
+.covid-stats {
+	position: relative;
+}
+#covid-states {
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	max-width: 200px;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  padding-left: 10px;
+}
 
 /* Media Queries */
 @media (max-width: 1200px) {
