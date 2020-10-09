@@ -2,11 +2,15 @@
 $(document).ready(function(){
    $('#datetimepicker1').datetimepicker();
 
+   // CONFIG
+   var dashboard_path = "Need_to_set_correct_path";
+
+
    /* SESSIONS */ 
 
-   /* Get Values */
+   /* Get Values + REGISTRATION*/
 
-   function logMeIn () {
+   function registerMe () {
    		var name = $("input[value='name']").val();
    		var email = $("input[email']").val();
    		var password = $("input[value='password']").val();
@@ -37,7 +41,7 @@ $(document).ready(function(){
 			});
 
 			// SET COOKIE
-			setCookie(email,"Valid",30);
+			setCookie(email,"Valid",30); // Adjustments
 
 			function setCookie(cname, cvalue, exdays) {
 			  var d = new Date();
@@ -47,6 +51,49 @@ $(document).ready(function(){
 			}
 
 			// Redirect
-			window.location.replace("need_correct_url_path");
+			window.location.replace(dashboard_path);
    };
+
+
+   // LOGIN FUNCTION
+   function logMeIn () {
+   		var email = $("input['email']").val();
+   		var password = $(md5("input[value='password']").val()+salt);
+
+   		con.connect(function(err) {
+			  if (err) throw err;
+			  con.query("SELECT * FROM users WHERE email = '"+email+"' && password = '"+password+"'", function (err, result, fields) {
+			    if (err) throw err;
+
+			    if (result.length == 0) {
+			    	// SHOW ERROR & REDIRECT
+
+
+
+			    }
+
+					// SET COOKIE
+					setCookie(email,"Valid",30);
+
+					function setCookie(cname, cvalue, exdays) {
+					  var d = new Date();
+					  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+					  var expires = "expires="+ d.toUTCString();
+					  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+					}
+
+			    // Redirect
+					window.location.replace(dashboard_path);
+			  });
+			});
+
+		
+		// LOGOUT FUNCTION
+		function clearAllCookies () {
+			for (var it in $.cookie()) $.removeCookie(it);
+
+		// REDIRECT TO LOGIN SCREEN
+	
+		};
+
 });
