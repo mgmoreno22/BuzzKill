@@ -283,7 +283,10 @@ p {
 
 }
 @media (max-width: 768px) {
-
+	main-nav ul {
+		float: none;
+		align-items: center;
+	}
 }
 @media (max-width: 576px) {
 

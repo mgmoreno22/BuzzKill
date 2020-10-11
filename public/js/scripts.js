@@ -5,6 +5,17 @@ $(document).ready(function(){
    // CONFIG
    var dashboard_path = "Need_to_set_correct_path";
 
+   /* PAGE NAVIGATION */
+   // login and register forms
+   $('#loginBtn').click(() => {
+      // Html blocks must have correct d-none classes
+      window.location = "./login.html"
+   })
+
+   $('#registerBtn').click(() => {
+      window.location = "./signup.html"
+   })
+
 
    /* SESSIONS */ 
 
@@ -57,35 +68,35 @@ $(document).ready(function(){
 
    // LOGIN FUNCTION
    function logMeIn () {
-   		var email = $("input['email']").val();
-   		var password = $(md5("input[value='password']").val()+salt);
+      var email = $("input['email']").val();
+      var password = $(md5("input[value='password']").val()+salt);
 
-   		con.connect(function(err) {
-			  if (err) throw err;
-			  con.query("SELECT * FROM users WHERE email = '"+email+"' && password = '"+password+"'", function (err, result, fields) {
-			    if (err) throw err;
+      con.connect(function(err) {
+         if (err) throw err;
+         con.query("SELECT * FROM users WHERE email = '"+email+"' && password = '"+password+"'", function (err, result, fields) {
+            if (err) throw err;
 
-			    if (result.length == 0) {
-			    	// SHOW ERROR & REDIRECT
+            if (result.length == 0) {
+            // SHOW ERROR & REDIRECT
 
 
 
-			    }
+            }
 
-					// SET COOKIE
-					setCookie(email,"Valid",30);
+            // SET COOKIE
+            setCookie(email,"Valid",30);
 
-					function setCookie(cname, cvalue, exdays) {
-					  var d = new Date();
-					  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-					  var expires = "expires="+ d.toUTCString();
-					  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-					}
+            function setCookie(cname, cvalue, exdays) {
+               var d = new Date();
+               d.setTime(d.getTime() + (exdays*24*60*60*1000));
+               var expires = "expires="+ d.toUTCString();
+               document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            }
 
-			    // Redirect
-					window.location.replace(dashboard_path);
-			  });
-			});
+            // Redirect
+            window.location.replace(dashboard_path);
+         });
+      });
 
 		
 		// LOGOUT FUNCTION
@@ -94,6 +105,7 @@ $(document).ready(function(){
 
 		// REDIRECT TO LOGIN SCREEN
 	
-		};
+      };
+   }
 
 });
