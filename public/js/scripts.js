@@ -16,6 +16,11 @@ $(document).ready(function(){
       window.location = "./signup.html"
    })
 
+   // $('#close-report').click(() => {
+   //    $('#report-data').addClass("d-none");
+   //    $('#covid-data').removeClass("d-none");
+   // })
+
 
    /* SESSIONS */ 
 
