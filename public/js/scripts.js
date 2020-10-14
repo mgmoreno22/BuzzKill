@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 /* Our custom JS scripts */
 $(document).ready(function(){
    $('#datetimepicker1').datetimepicker();
@@ -42,7 +40,7 @@ $(document).ready(function(){
 			    alert("You have entered an invalid email address!")
 			    return (false) }
 
-			var salt = process.env.password_salt;
+			var salt = "MyWiErDSa|tValuEEE"
 
 			// Convert Password
 			var myPass = md5(password + salt);
