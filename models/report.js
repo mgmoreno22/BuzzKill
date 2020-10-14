@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
     const Reports = sequelize.define("reports", {
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull, false,
+            allowNull: false,
             references: 'users',
             referencesKey: 'user_id'
         },
