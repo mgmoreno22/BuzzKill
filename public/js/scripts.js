@@ -1,12 +1,14 @@
 /* Our custom JS scripts */
 $(document).ready(function(){
-   $('#datetimepicker1').datetimepicker();
+   // $('#datetimepicker1').datetimepicker();
 
    // CONFIG
    var dashboard_path = "Need_to_set_correct_path";
 
    /* PAGE NAVIGATION */
    // login and register forms
+
+   //COMMENTED OUT BECAUSE LOGIN/SIGNUP PAGE SWITCHES ARE BUILT INTO ANCHOR TAGS
    $('#loginBtn').click(() => {
       // Html blocks must have correct d-none classes
       window.location = "./login.html"
@@ -99,7 +101,7 @@ $(document).ready(function(){
             }
 
             // Redirect
-            window.location.replace(dashboard_path);
+            window.location.replace("./home.html");
          });
       });
 

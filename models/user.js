@@ -5,11 +5,10 @@ const bcrypt = require("bcryptjs");
 // const md5 = require("md5");
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-  const User = sequelize.define("Users", {
-    // The email cannot be null, and must be a proper email before creation
+  const User = sequelize.define("user", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
@@ -19,7 +18,6 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-    // The password cannot be null
     password: {
       type: DataTypes.STRING,
       allowNull: false
@@ -31,17 +29,16 @@ module.exports = function(sequelize, DataTypes) {
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
-  // User.addHook("beforeCreate", user => {
-  //   user.password = bcrypt.hashSync(
-  //     user.password,
-  //     bcrypt.genSaltSync(10),
-  //     null
-  //   );
-  // });
-  // return User;
-  User.addHook("beforeCreate", (user) => {
-    var salt = "MyWiErDSa|tValuEEE";
-    user.password = md5(passwword + salt);
+  User.addHook("beforeCreate", user => {
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10)
+    );
   });
   return User;
+  // User.addHook("beforeCreate", (user) => {
+  //   var salt = "MyWiErDSa|tValuEEE";
+  //   user.password = md5(passwword + salt);
+  // });
+  // return User;
 };

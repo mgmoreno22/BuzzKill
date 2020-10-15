@@ -1,6 +1,17 @@
 $(document).ready(() => {
+  // Hide All Errors if not already hidden
+  // if (!($(p.nameError).hasClass("d-none"))) {
+  //   $(p.nameError).addClass("d-none");
+  // }
+  // if (!($(p.emailError).hasClass("d-none"))) {
+  //   $(p.emailError).addClass("d-none");
+  // }
+  // if (!($(p.passwordError).hasClass("d-none"))) {
+  //   $(p.passwordError).addClass("d-none");
+  // }
+
   // Getting references to our form and input
-  const registerForm = $("form#register");
+  const registerForm = $("form.register");
   const nameInput = $("input#name-input")
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");

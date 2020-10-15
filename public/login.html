@@ -20,27 +20,17 @@
     <!-- FIRST SCREEN -->
     <div class="form-block text-center">
       <h1>Log In</h1>
-      <form>
-        <input type="email" name="email" placeholder="Your Email">
-        <input type="password" name="password" placeholder="Your Password">
+      <p class="emailError d-none">Please enter a valid email</p>
+      <p class="passwordError d-none">Please enter a valid password</p>
+      <form class="login">
+        <input type="email" name="email" placeholder="Your Email" id="email-input">
+        <input type="password" name="password" id="password-input" placeholder="Your Password">
         <p>Don't have an account? <a href="./signup.html">Register</a>
         <button class="btn-outline" id="checkLogin">Login</button>
       </form>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-
-
-<!--     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
- -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -52,10 +42,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="statistics.js"></script>
 
 
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
+    <script src="js/login.js"></script>
+    
   </body>
 </html>

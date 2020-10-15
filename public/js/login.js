@@ -16,6 +16,20 @@ $(document).ready(() => {
       return;
     }
 
+    
+    if (!userData.email) {
+      if ($(p.emailError).hasClass("d-none")) {
+        $(p.emailError).removeClass("d-none")
+      }
+      return;
+    }
+    else if (!userData.password) {
+      if ($(p.passwordError).hasClass("d-none")) {
+        $(p.passwordError).removeClass("d-none")
+      }
+      return;
+    }
+
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
     emailInput.val("");
@@ -29,7 +43,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.replace("/home");
         // If there's an error, log the error
       })
       .catch(err => {

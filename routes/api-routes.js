@@ -18,7 +18,8 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
+    console.log(req.body)
+    db.user.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
@@ -27,6 +28,7 @@ module.exports = function(app) {
         res.redirect(307, "/api/login");
       })
       .catch(err => {
+        console.log(err)
         res.status(401).json(err);
       });
   });
@@ -37,7 +39,7 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
-  // Route for getting some data about our user to be used client side
+  // Route for getting some data about our user to be used client sided
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
       // The user is not logged in, send back an empty object
@@ -51,4 +53,26 @@ module.exports = function(app) {
       });
     }
   });
+
+  //run this route only ONCE to seed database!;
+  app.get("/api/seeder", (req,res)=> {
+    const locations = ["public park", "food/dining", "bar/brewery", "lounge/nightclub", "indoor activity spot", "outdoor activity spot", "other"];
+    const events = ["Adult Party", "Children's Party", "Holiday Party", "Wedding Ceremony/Party"];
+    // console.log(db)
+     locations.forEach( async location => {
+        try {
+          await db.location.create({location_type: location})
+        }catch(err){
+          console.log(err)
+        }
+      })
+      events.forEach( async event => {
+        try {
+          await db.event.create({event_name: event})
+        }catch(err){
+          console.log(err)
+        }
+      })
+      res.json("SEEDED!")
+  })
 };
