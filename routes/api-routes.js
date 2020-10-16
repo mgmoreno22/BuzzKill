@@ -54,8 +54,12 @@ module.exports = function(app) {
     }
   });
 
-  app.post("/api/reports"), (req,res)=> {
+  app.get("/api/report_data", (req, res) => {
     
+  })
+
+  app.post("/api/reports"), (req,res)=> {
+
   }
 
   //run this route only ONCE to seed database!;
