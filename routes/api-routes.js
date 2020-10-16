@@ -55,6 +55,7 @@ module.exports = function(app) {
     }
   });
 
+
   app.get("/api/report_data", (req, res) => {
     res.json({
       user_id: req.body.user_id,
@@ -65,6 +66,7 @@ module.exports = function(app) {
       notes: req.body.notes
     })
   })
+
 
   app.post("/api/reports"), (req,res)=> {
     console.log(req.body)
