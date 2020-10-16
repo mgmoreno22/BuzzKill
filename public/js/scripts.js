@@ -7,8 +7,6 @@ $(document).ready(function(){
 
    /* PAGE NAVIGATION */
    // login and register forms
-
-   //COMMENTED OUT BECAUSE LOGIN/SIGNUP PAGE SWITCHES ARE BUILT INTO ANCHOR TAGS
    $('#loginBtn').click(() => {
       // Html blocks must have correct d-none classes
       window.location = "./login.html"

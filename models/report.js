@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         location_id: DataTypes.INTEGER,
-        start_time: DataTypes.DATE,
+        start_time: DataTypes.STRING,
         notes: DataTypes.TEXT,
         report_timestamp: DataTypes.DATE
     })

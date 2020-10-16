@@ -329,9 +329,9 @@
                 <div class="col-6 mb-4">
                   <select name="event-type" id="event-type">
                     <option value="Adult Party">Adult Party</option>
-                    <option value="Dog Party">Dog Party</option>
-                    <option value="Wedding">Wedding</option>
-                    <option value="Kids Party">Kids Party</option>
+                    <option value="Dog Party">Children's Party</option>
+                    <option value="Wedding">Holiday Party</option>
+                    <option value="Kids Party">Wedding Ceremony/Party</option>
                   </select>
                 </div>
                 <div class="col-6 mb-4">
@@ -341,17 +341,31 @@
                   <input type="text" name="address">
                 </div>
                 <div class="col-6 mb-4">
+                  What type of Location is this:
+                </div>
+                <div class="col-6 mb-4">
+                  <select name="location-type" id="location-type">
+                    <option value="Public Park">Public Park</option>
+                    <option value="Food/Dining">Food/Dining</option>
+                    <option value="Bar/Brewery">Bar/Brewery</option>
+                    <option value="Lounge/Nightclub">Lounge/Nightclub</option>
+                    <option value="Indoor Activity Spot">Indoor Activity Spot</option>
+                    <option value="Outdoor Activity Spot">Outdoor Activity Spot</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-6 mb-4">
                   When it Started: 
                 </div>
                 <div class="col-6 mb-4">
-                  <div class='input-group date' id='datetimepicker1'>
+                  <div class='input-group date'  id='datetimepicker1'>
                     <input type='text' class="form-control" />
                     <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                   </div>
                 </div>
-                <div class="col-6 mb-4">
+                <!-- <div class="col-6 mb-4">
                   Did You Report to Police?
                 </div>
                 <div class="col-6 mb-4">
@@ -359,7 +373,7 @@
                   <p>Yes</p>
                   <input type="radio" id="police-no" name="police" value="No">
                   <p>No</p>
-                </div>
+                </div> -->
                 <div class="col-12">
                   Notes:<br>
                   <textarea name="message" rows="10"></textarea>
@@ -384,6 +398,7 @@
     <script src="js/statistics.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
 
   </body>
 </html>
