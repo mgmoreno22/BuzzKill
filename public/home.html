@@ -13,6 +13,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
@@ -77,7 +78,7 @@
           </div>
   
           <!-- COVID STATS -->
-          <div class="col-md-8 col-lg-4" id="covid-data">
+          <div class="col-md-8 col-lg-4 d-none" id="covid-data">
             <div class="right-column covid-stats">
               <h2>Covid Stats</h2>
   
@@ -189,8 +190,9 @@
           </div>
         </div>
           <!-- REPORT DETAILS -->
-                  <div class="col-4 d-none">
+                  <div class="col-md-8 col-lg-4">
             <div class="right-column report-results">
+              <!-- Event ID here -->
               <h2>Adult Party</h2>
               <a href="#"><img src="images/icon-close.png" class="close-button"></a>
   
@@ -205,25 +207,29 @@
                     Address
                   </div>
                   <div class="col-6 mt-4">
+                    <!-- Address -->
                     12345 Main St. Calabasas, CA 91222
+                  </div>
+                  <div class="col-6 mt-4">
+                    Location Type
+                  </div>
+                  <div class="col-6 mt-4">
+                    <!-- Location Type Here -->
+                    Public Park
                   </div>
                   <div class="col-6 mt-4">
                     Start Time
                   </div>
                   <div class="col-6 mt-4">
+                    <!-- Start Time Here -->
                     10/06/2020 at 11:00PM
                   </div>
                   <div class="col-6 mt-4">
                     Reported By
                   </div>
                   <div class="col-6 mt-4">
+                    <!-- User Here -->
                     John Doe
-                  </div>
-                  <div class="col-6 mt-4">
-                    Reported to Police?
-                  </div>
-                  <div class="col-6 mt-4">
-                    Yes
                   </div>
                   <div class="col-6 mt-4">
                     Notes:
@@ -329,29 +335,43 @@
                 <div class="col-6 mb-4">
                   <select name="event-type" id="event-type">
                     <option value="Adult Party">Adult Party</option>
-                    <option value="Dog Party">Dog Party</option>
-                    <option value="Wedding">Wedding</option>
-                    <option value="Kids Party">Kids Party</option>
+                    <option value="Dog Party">Children's Party</option>
+                    <option value="Wedding">Holiday Party</option>
+                    <option value="Kids Party">Wedding Ceremony/Party</option>
                   </select>
                 </div>
                 <div class="col-6 mb-4">
                   Address: 
                 </div>
                 <div class="col-6 mb-4">
-                  <input type="text" name="address">
+                  <input type="text" id="address" name="address">
+                </div>
+                <div class="col-6 mb-4">
+                  What type of Location is this:
+                </div>
+                <div class="col-6 mb-4">
+                  <select name="location-type" id="location-type">
+                    <option value="Public Park">Public Park</option>
+                    <option value="Food/Dining">Food/Dining</option>
+                    <option value="Bar/Brewery">Bar/Brewery</option>
+                    <option value="Lounge/Nightclub">Lounge/Nightclub</option>
+                    <option value="Indoor Activity Spot">Indoor Activity Spot</option>
+                    <option value="Outdoor Activity Spot">Outdoor Activity Spot</option>
+                    <option value="Other">Other</option>
+                  </select>
                 </div>
                 <div class="col-6 mb-4">
                   When it Started: 
                 </div>
                 <div class="col-6 mb-4">
-                  <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+                  <div class='input-group date'  id='datetimepicker1'>
+                    <input type='text' id="reportDate" class="form-control" />
                     <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                   </div>
                 </div>
-                <div class="col-6 mb-4">
+                <!-- <div class="col-6 mb-4">
                   Did You Report to Police?
                 </div>
                 <div class="col-6 mb-4">
@@ -359,13 +379,13 @@
                   <p>Yes</p>
                   <input type="radio" id="police-no" name="police" value="No">
                   <p>No</p>
-                </div>
+                </div> -->
                 <div class="col-12">
                   Notes:<br>
-                  <textarea name="message" rows="10"></textarea>
+                  <textarea name="message" id="eventNotes" rows="10"></textarea>
                 </div>
                 <div class="col-12">
-                  <button class="btn-solid">Report</button>
+                  <button class="btn-solid reportBtn" id="reportBtn">Report</button>
                 </div>
               </div>
             </div>
@@ -373,17 +393,22 @@
         </div>
       </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>    -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="https://code.jquery.com/jquery.js"></script>
 
 
     <!-- Our Custom JS -->
     <script src="js/statistics.js"></script>
     <script src="js/scripts.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
 
   </body>
 </html>

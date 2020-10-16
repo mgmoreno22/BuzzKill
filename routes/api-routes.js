@@ -54,9 +54,13 @@ module.exports = function(app) {
     }
   });
 
+  app.post("/api/reports"), (req,res)=> {
+    
+  }
+
   //run this route only ONCE to seed database!;
   app.get("/api/seeder", (req,res)=> {
-    const locations = ["public park", "food/dining", "bar/brewery", "lounge/nightclub", "indoor activity spot", "outdoor activity spot", "other"];
+    const locations = ["Public Park", "Food/Dining", "Bar/Brewery", "Lounge/Nightclub", "Indoor Activity Spot", "Outdoor Activity Spot", "Other"];
     const events = ["Adult Party", "Children's Party", "Holiday Party", "Wedding Ceremony/Party"];
     // console.log(db)
      locations.forEach( async location => {
