@@ -54,6 +54,18 @@ module.exports = function(app) {
     }
   });
 
+  //route for retrieving reports made
+  app.get("/api/report_data", (req, res) => {
+    if (!req.user) {
+      res.json({});
+    } else {
+      db.Report.findAll({
+      }).then((data) => {
+        res.json(data)
+      })  
+    }
+  });
+
   app.post("/api/reports"), (req,res)=> {
     
   }
