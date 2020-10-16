@@ -3,8 +3,6 @@ module.exports = function(sequelize, DataTypes) {
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: 'users',
-            // referencesKey: 'id'
             references: {
                 model: 'users',
                 key: 'id'
@@ -13,8 +11,6 @@ module.exports = function(sequelize, DataTypes) {
         event_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            // references: 'events',
-            // referencesKey: 'id'
             references: {
                 model: 'events',
                 key: 'id'
@@ -26,8 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         location_id: DataTypes.INTEGER,
         start_time: DataTypes.STRING,
-        notes: DataTypes.TEXT,
-        report_timestamp: DataTypes.DATE
+        notes: DataTypes.TEXT
     })
     return Report;
 }

@@ -8,6 +8,7 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
+    // setCookie(req.user.id,"Valid",30); // Adjustments
     res.json({
       email: req.user.email,
       id: req.user.id
@@ -54,20 +55,36 @@ module.exports = function(app) {
     }
   });
 
-  //route for retrieving reports made
+
   app.get("/api/report_data", (req, res) => {
-    if (!req.user) {
-      res.json({});
-    } else {
-      db.Report.findAll({
-      }).then((data) => {
-        res.json(data)
-      })  
-    }
-  });
+    res.json({
+      user_id: req.body.user_id,
+      event_id: req.body.event_id,
+      address: req.body.address,
+      location_id: req.body.location_id,
+      start_time: req.body.start_time,
+      notes: req.body.notes
+    })
+  })
+
 
   app.post("/api/reports"), (req,res)=> {
-    
+    console.log(req.body)
+    db.report.create({
+      user_id: req.body.user_id,
+      event_id: req.body.event_id,
+      address: req.body.address,
+      location_id: req.body.location_id,
+      start_time: req.body.start_time,
+      notes: req.body.notes
+    })
+      .then(() => {
+        console.log("Report Created")
+      })
+      .catch(err => {
+        console.log(err)
+        res.status(401).json(err);
+      });
   }
 
   //run this route only ONCE to seed database!;
