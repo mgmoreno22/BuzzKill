@@ -21,60 +21,7 @@ $(document).ready(function(){
    // $('#close-report').click(() => {
    //    $('#report-data').addClass("d-none");
    //    $('#covid-data').removeClass("d-none");
-   // })
-
-
-   // reportContainer
-   $(".report-card").on('click', function() {
-
-      var id = $(this).attr('id');
-      // 
-      console.log("ID - " + id);
-
-      // Pull Data
-      var repAddress = $("#"+id+" .report-address").text();
-      var repLocationType = $("#"+id+" .report-location-type").text();
-      var repStart = $("#"+id+" .report-start-type").text();
-      var repReportedBy = $("#"+id+" .report-reported-by").text();
-      var repNotes = $("#"+id+" .report-notes").text();
-
-      console.log("repAddress " +repAddress);
-      console.log("repLocationType " +repLocationType);
-      console.log("repStart " +repStart);
-      console.log("repReportedBy " +repReportedBy);
-      console.log("repNotes " +repNotes);
-
-
-      // Push Data
-      $("#card-address").text(repAddress);
-      $("#card-type").text(repLocationType);
-      $("#card-time").text(repStart);
-      $("#card-name").text(repReportedBy);
-      $("#card-notes").text(repNotes);
-
-      // Show Details
-      $("#covid-data").removeClass("d-block");
-      $("#covid-data").addClass("d-none");
-      
-      $("#reportContainer").removeClass("d-none");
-      $("#reportContainer").addClass("d-block");
-
-   });
-
-
-   $("#reportClose").click(() => {
-
-      // 
-      console.log("click");
-
-      // Show Details
-      $("#covid-data").removeClass("d-none");
-      $("#covid-data").addClass("d-block");
-      
-      $("#reportContainer").removeClass("d-block");
-      $("#reportContainer").addClass("d-none");
-
-   });   
+   // }) 
 
 
    /* SESSIONS */ 
