@@ -194,13 +194,17 @@
           <div class="col-md-12 col-sm-12 col-lg-4" id="reportContainer">
             <div class="right-column report-results">
               <!-- Event ID here -->
-              <h2>Adult Party</h2>
+              <h2><span id="reportEvent">Adult Party</span></h2>
               <a href="#" id="reportClose"><img src="images/icon-close.png" class="close-button"></a>
+
+              <span class="fullReport">
+              </span>
   
               <div class="white-bg mt-4">
                 <div class="row">
                   <div class="google-map">
-                    <iframe height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <!-- <iframe height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
+                    <iframe height="300" id="gmap_canvas" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                   </div>
                 </div>
                 <div class="row">
@@ -209,37 +213,38 @@
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Address -->
-                    12345 Main St. Calabasas, CA 91222
+                    <span id="reportAddress">12345 Main St. Calabasas, CA 91222</span>
                   </div>
                   <div class="col-6 mt-4">
                     Location Type
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Location Type Here -->
-                    Public Park
+                    <span id="reportLocation">Public Park</span>
                   </div>
                   <div class="col-6 mt-4">
                     Start Time
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Start Time Here -->
-                    10/06/2020 at 11:00PM
+                    <span id="reportTime">10/06/2020 at 11:00PM</span>
                   </div>
                   <div class="col-6 mt-4">
                     Reported By
                   </div>
                   <div class="col-6 mt-4">
                     <!-- User Here -->
-                    John Doe
+                    Jessica
                   </div>
                   <div class="col-6 mt-4">
                     Notes:
                   </div>
                   <div class="col-6 mt-4">
-                    Notes go here
+                    <spam id="reportNote">Notes go here</span>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
