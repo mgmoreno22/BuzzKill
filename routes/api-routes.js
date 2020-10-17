@@ -55,16 +55,32 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/reports", (req, res) => {
-    res.json({
-      user_id: req.body.user_id,
-      event_id: req.body.event_id,
-      address: req.body.address,
-      location_id: req.body.location_id,
-      start_time: req.body.start_time,
-      notes: req.body.notes
+  // app.get("/api/reports", (req, res) => {
+  //   res.json({
+  //     user_id: req.body.user_id,
+  //     event_id: req.body.event_id,
+  //     address: req.body.address,
+  //     location_id: req.body.location_id,
+  //     start_time: req.body.start_time,
+  //     notes: req.body.notes
+  //   })
+  //   console.log()
+  // })
+
+  app.get("/api/reports", (req,res) => {
+    db.report.findAll({}).then(dbReports => {
+      res.json(dbReports);
     })
-    console.log()
+  })
+
+  app.get("/api/reports/:id", (req,res) => {
+    db.report.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbReport => {
+      res.json(dbReport)
+    })
   })
 
   app.post("/api/reports", (req,res)=> {
