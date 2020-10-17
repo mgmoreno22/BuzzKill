@@ -48,39 +48,55 @@
               </span>
               
               <!-- CARD -->
-              <!-- <div class="report-card">
+              <div class="report-card" id="report1">
                 <img src="images/icon-adult.png">
                 <h3>Adult Party</h3>
-                <p>12345 Main St, Calabasas, CA 91111</p>
+                <p class="report-address">12345 Main St, Calabasas, CA 91111</p>
                 <strong>Reported on 05/05/2020</strong>
-              </div> -->
+                <span class="report-location-type d-none">Public Park</span>
+                <span class="report-start-type d-none">10/06/2020 at 11:00PM</span>
+                <span class="report-reported-by d-none">John Doe</span>
+                <span class="report-notes d-none">Notes go here</span>                
+              </div>
               <!-- CARD -->
-              <!-- <div class="report-card">
+              <div class="report-card" id="report2">
                 <img src="images/icon-adult.png">
                 <h3>Adult Party</h3>
-                <p>12345 Main St, Calabasas, CA 91111</p>
+                <p class="report-address">12345 Main St, Calabasas, CA 91111</p>
                 <strong>Reported on 05/05/2020</strong>
-              </div> -->
+                <span class="report-location-type d-none"></span>
+                <span class="report-start-type d-none"></span>
+                <span class="report-reported-by d-none"></span>
+                <span class="report-notes d-none"></span>
+              </div>
               <!-- CARD -->
-              <!-- <div class="report-card">
+              <div class="report-card" id="report3">
                 <img src="images/icon-adult.png">
                 <h3>Adult Party</h3>
-                <p>12345 Main St, Calabasas, CA 91111</p>
+                <p class="report-address">12345 Main St, Calabasas, CA 91111</p>
                 <strong>Reported on 05/05/2020</strong>
-              </div> -->
+                <span class="report-location-type d-none"></span>
+                <span class="report-start-type d-none"></span>
+                <span class="report-reported-by d-none"></span>
+                <span class="report-notes d-none"></span>                
+              </div>
               <!-- CARD -->
-              <!-- <div class="report-card">
+              <div class="report-card" id="report4">
                 <img src="images/icon-adult.png">
                 <h3>Adult Party</h3>
-                <p>12345 Main St, Calabasas, CA 91111</p>
+                <p class="report-address">12345 Main St, Calabasas, CA 91111</p>
                 <strong>Reported on 05/05/2020</strong>
-              </div> -->
+                <span class="report-location-type d-none"></span>
+                <span class="report-start-type d-none"></span>
+                <span class="report-reported-by d-none"></span>
+                <span class="report-notes d-none"></span>                
+              </div>
 
             </div>
           </div>
   
           <!-- COVID STATS -->
-          <div class="col-md-12 col-lg-4 d-none" id="covid-data">
+          <div class="col-md-12 col-lg-4 d-block" id="covid-data">
             <div class="right-column covid-stats">
               <h2>Covid Stats</h2>
   
@@ -191,7 +207,7 @@
             </div>
           </div>
           <!-- REPORT DETAILS -->
-          <div class="col-md-12 col-sm-12 col-lg-4" id="reportContainer">
+          <div class="col-md-12 col-sm-12 col-lg-4 d-none" id="reportContainer">
             <div class="right-column report-results">
               <!-- Event ID here -->
               <h2>Adult Party</h2>
@@ -209,34 +225,34 @@
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Address -->
-                    12345 Main St. Calabasas, CA 91222
+                    <span id="card-address">12345 Main St. Calabasas, CA 91222</span>
                   </div>
                   <div class="col-6 mt-4">
                     Location Type
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Location Type Here -->
-                    Public Park
+                    <span id="card-type">Public Park</span>
                   </div>
                   <div class="col-6 mt-4">
                     Start Time
                   </div>
                   <div class="col-6 mt-4">
                     <!-- Start Time Here -->
-                    10/06/2020 at 11:00PM
+                    <span id="card-time">10/06/2020 at 11:00PM</span>
                   </div>
                   <div class="col-6 mt-4">
                     Reported By
                   </div>
                   <div class="col-6 mt-4">
                     <!-- User Here -->
-                    John Doe
+                    <span id="card-name">John Doe</span>
                   </div>
                   <div class="col-6 mt-4">
                     Notes:
                   </div>
                   <div class="col-6 mt-4">
-                    Notes go here
+                    <span id="card-note">Notes go here</span>
                   </div>
                 </div>
               </div>

@@ -46,7 +46,7 @@ $(document).ready(function() {
 
         var $newReportCard = $(
             [
-                "<div class='report-card' value='",
+                "<div class='report-card' id='",
                 report.id,
                 "'><img src='",
                 imgSrc,
@@ -62,11 +62,11 @@ $(document).ready(function() {
     }
 
     // Listening for Full Report to close
-    $('#reportClose').click(()=> {
-        console.log("are you trying to close?")
-        $('#reportContainer').addClass('d-none')
-        $('#covid-data').removeClass('d-none')
-    })
+    // $('#reportClose').click(()=> {
+    //     console.log("are you trying to close?")
+    //     $('#reportContainer').addClass('d-none')
+    //     $('#covid-data').removeClass('d-none')
+    // })
 
     //Listening to Generate Report
     // $('div.report-card').click(() => {
