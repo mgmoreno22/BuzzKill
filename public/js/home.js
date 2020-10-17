@@ -6,7 +6,6 @@ $(document).ready(function() {
     getReports()
     // Delete this
     showReport(2)
-
     function getReports() {
         $.get("/api/reports", renderReportCards);
     }
@@ -107,11 +106,12 @@ $(document).ready(function() {
         $('#reportNote').text(report.notes)
     }
 
-    $(".report-card").on('click', function() {
+    $(document).on('click','.report-card',function(){
 
         var id = $(this).attr('id');
         // 
         console.log("ID - " + id);
+        showReport(id)
   
         // Pull Data
         var repAddress = $("#"+id+" .report-address").text();

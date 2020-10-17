@@ -1,4 +1,4 @@
-$.getJSON("http://api.covidtracking.com/v1/us/current.json", data => {
+$.getJSON("https://api.covidtracking.com/v1/us/current.json", data => {
   // console.log(data);
   $(".US1").text(data[0].positive);
   $(".US2").text(data[0].recovered);
@@ -21,7 +21,7 @@ $("#covid-states").change(() => {
 
 function apiCall(state) {
   $.getJSON(
-    "http://api.covidtracking.com/v1/states/" + state + "/current.json",
+    "https://api.covidtracking.com/v1/states/" + state + "/current.json",
     data => {
       console.log(data);
       $(".CA1").text(data.positive);
