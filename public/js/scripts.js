@@ -1,6 +1,8 @@
 /* Our custom JS scripts */
 $(document).ready(function(){
-   // $('#datetimepicker1').datetimepicker();
+   if (window.location.pathname == "/home" || window.location.pathname == "/home#") {
+      $('#datetimepicker1').datetimepicker();
+   }
 
    // CONFIG
    var dashboard_path = "Need_to_set_correct_path";

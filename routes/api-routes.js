@@ -55,21 +55,37 @@ module.exports = function(app) {
     }
   });
 
+  // app.get("/api/reports", (req, res) => {
+  //   res.json({
+  //     user_id: req.body.user_id,
+  //     event_id: req.body.event_id,
+  //     address: req.body.address,
+  //     location_id: req.body.location_id,
+  //     start_time: req.body.start_time,
+  //     notes: req.body.notes
+  //   })
+  //   console.log()
+  // })
 
-  app.get("/api/report_data", (req, res) => {
-    res.json({
-      user_id: req.body.user_id,
-      event_id: req.body.event_id,
-      address: req.body.address,
-      location_id: req.body.location_id,
-      start_time: req.body.start_time,
-      notes: req.body.notes
+  app.get("/api/reports", (req,res) => {
+    db.report.findAll({}).then(dbReports => {
+      res.json(dbReports);
     })
   })
 
+  app.get("/api/reports/:id", (req,res) => {
+    db.report.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbReport => {
+      res.json(dbReport)
+    })
+  })
 
-  app.post("/api/reports"), (req,res)=> {
+  app.post("/api/reports", (req,res)=> {
     console.log(req.body)
+    console.log("************************")
     db.report.create({
       user_id: req.body.user_id,
       event_id: req.body.event_id,
@@ -85,12 +101,33 @@ module.exports = function(app) {
         console.log(err)
         res.status(401).json(err);
       });
-  }
+  })
+
+   // app.post("/api/test",(req, res)=>{
+  // console.log(req.body)
+  // console.log("******************")
+  // db.report.create({
+  //     user_id: req.body.user_id,
+  //     event_id: req.body.event_id,
+  //     address: req.body.address,
+  //     location_id: req.body.location_id,
+  //     start_time: req.body.start_time,
+  //     notes: req.body.notes
+  //   })
+  //     .then(() => {
+  //       console.log("Report Created")
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //       res.status(401).json(err);
+  //     });
+  // })
 
   //run this route only ONCE to seed database!;
   app.get("/api/seeder", (req,res)=> {
     const locations = ["Public Park", "Food/Dining", "Bar/Brewery", "Lounge/Nightclub", "Indoor Activity Spot", "Outdoor Activity Spot", "Other"];
     const events = ["Adult Party", "Children's Party", "Holiday Party", "Wedding Ceremony/Party"];
+    const reports = [{user_id: 1, event_id: 1, address: "448 S Hill St Los Angeles CA 90013", location_id: 3, start_time: "10-13-20 8:00 PM", notes: "No masks, some social distancing in place"}, {user_id: 1, event_id: 3, address: "3040 Sunset Blvd Los Angeles CA 90026", location_id: 4, start_time: "10-12-20 6:30 PM", notes: "Attempts made at sanitization and social distancing"}]
     // console.log(db)
      locations.forEach( async location => {
         try {
@@ -103,6 +140,13 @@ module.exports = function(app) {
         try {
           await db.event.create({event_name: event})
         }catch(err){
+          console.log(err)
+        }
+      })
+      reports.forEach( async report => {
+        try {
+          await db.report.create({user_id: report.user_id, event_id: report.event_id, address: report.address, location_id: report.location_id, start_time: report.start_time, notes: report.notes})
+        } catch(err){
           console.log(err)
         }
       })
