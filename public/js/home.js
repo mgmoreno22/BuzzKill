@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     getReports()
     // Delete this
-    showReport(3)
+    showReport(2)
 
     function getReports() {
         $.get("/api/reports", renderReportCards);
