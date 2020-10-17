@@ -287,8 +287,11 @@ p {
 
 }
 @media (max-width: 992px) {
-
+	.small-nav {
+		text-align: center;
+	}
 }
+
 @media (max-width: 768px) {
 	.left-column {
 		margin: 0;
@@ -298,6 +301,11 @@ p {
 		position: relative;
 		overflow: auto;
 	}
+
+	.right-column{
+		margin:20px
+	}
+
 	.main-logo {
 		margin: 0;
 		position: absolute;
