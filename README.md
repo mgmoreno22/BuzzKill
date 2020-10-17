@@ -18,5 +18,5 @@ Usman Chaudry:  usmanjchaudry<br>
 Teresa Maldonado: teresam3
 
 ## Links
-Deployed Heroku: <br>
+Deployed Heroku: https://salty-hollows-77148.herokuapp.com/
 GitHub repo: https://github.com/mgmoreno22/BuzzKill
