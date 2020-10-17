@@ -21,7 +21,7 @@ $(document).ready(function(){
    // $('#close-report').click(() => {
    //    $('#report-data').addClass("d-none");
    //    $('#covid-data').removeClass("d-none");
-   // })
+   // }) 
 
 
    /* SESSIONS */ 

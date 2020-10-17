@@ -51,7 +51,7 @@ $(document).ready(function() {
 
         var $newReportCard = $(
             [
-                "<div class='report-card' value='",
+                "<div class='report-card' id='",
                 report.id,
                 "'><img src='",
                 imgSrc,
@@ -107,6 +107,53 @@ $(document).ready(function() {
         $('#reportNote').text(report.notes)
     }
 
+    $(".report-card").on('click', function() {
+
+        var id = $(this).attr('id');
+        // 
+        console.log("ID - " + id);
+  
+        // Pull Data
+        var repAddress = $("#"+id+" .report-address").text();
+        var repLocationType = $("#"+id+" .report-location-type").text();
+        var repStart = $("#"+id+" .report-start-type").text();
+        var repReportedBy = $("#"+id+" .report-reported-by").text();
+        var repNotes = $("#"+id+" .report-notes").text();
+  
+        console.log("repAddress " +repAddress);
+        console.log("repLocationType " +repLocationType);
+        console.log("repStart " +repStart);
+        console.log("repReportedBy " +repReportedBy);
+        console.log("repNotes " +repNotes);
+  
+  
+        // Push Data
+        $("#card-address").text(repAddress);
+        $("#card-type").text(repLocationType);
+        $("#card-time").text(repStart);
+        $("#card-name").text(repReportedBy);
+        $("#card-notes").text(repNotes);
+  
+        // Show Details
+        $("#covid-data").removeClass("d-block");
+        $("#covid-data").addClass("d-none");
+        
+        $("#reportContainer").removeClass("d-none");
+        $("#reportContainer").addClass("d-block");
+  
+    });
+
+    $("#reportClose").click(() => {
+  
+        // Show Details
+        $("#covid-data").removeClass("d-none");
+        $("#covid-data").addClass("d-block");
+        
+        $("#reportContainer").removeClass("d-block");
+        $("#reportContainer").addClass("d-none");
+  
+    }); 
+
 
     // Function that creates new report in database
     $('.reportBtn').click(() => {
@@ -118,13 +165,6 @@ $(document).ready(function() {
         const locationType = $('#location-type').val()
         const reportDate = $('#reportDate').val()
         const note = $('#eventNotes').val()
-
-        // console.log("user: " + userId)
-        // console.log("event: " + eventName)
-        // console.log("address: " + address)
-        // console.log("location: " + locationType)
-        // console.log("Report Date: " + reportDate)
-        // console.log("Note: " + note)
 
         var reportData = {
             user_id: userId,
