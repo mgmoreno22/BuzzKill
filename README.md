@@ -1,16 +1,27 @@
 # BuzzKill
 
-## What the project does:
-An applications which takes Covid-19, user based reporting and Google maps to record any violations that might be occuring within a neighborhood. Users can make and view recent reports of any social distancing or other violations regarding Covid-19
-## Why the project is useful:
-It is a convenient, easy and safe way to view how your neighborhood is handling Covid-19, social distancing and other health regulations.
-## How users can get started with the project: 
-Users must login and register an account in order to gain entrance into the application. Once logged in, users can view recent reports being made, view overall statistics regarding Covid-19 both national and global, and make reports of any health regulations. 
+An application that utilizes user-based reporting and Google Maps to review public locations.<br>
+Visit the site here: [Buzzkill](https://salty-hollows-77148.herokuapp.com/)<br><br>
+![License](https://img.shields.io/badge/LICENSE-MIT-GREEN)
 
-## Where users can get help with your project:
-Users may contact any of the contributors below for any issues or questions regarding this application.
+## Table of Contents
 
-## Who maintains and contributes to the project:
+[Description](#Description)<br>
+[Usage](#Usage)<br>
+[Contributors](#Contributors)<br>
+[Links](#Links)
+
+## Description:
+An applications which takes Covid-19, user based reporting and Google maps to record any violations that might be occuring within a neighborhood. Users can make and view recent reports of any social distancing or other violations regarding Covid-19.
+
+## Usage:
+Upon entering the main site, users can see a list of reports that have been made in a report that shows a map and user-made description.<br><br>
+![Buzzkill main site with list of reports on left and demo report on right](./public/images/readme/Buzzkill-ex1.PNG)
+
+Registered users can make a new report which will appear in the list of displayed reports by clicking the "Report New Event" button and filling out the form.
+![Buzzkill site report form](./public/images/readme/Buzzkill-ex2.PNG)
+
+## Contributors:
 Contributors and github usernames<br>
 Alex Blake: alexblakela<br>
 Michael Moreno: mgmoreno22<br>
