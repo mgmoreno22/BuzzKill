@@ -16,10 +16,10 @@ An applications which takes Covid-19, user based reporting and Google maps to re
 
 ## Usage:
 Upon entering the main site, users can see a list of reports that have been made in a report that shows a map and user-made description.<br><br>
-![Buzzkill main site with list of reports on left and demo report on right](./public/images/readme/Buzzkill-ex1.PNG)
+![Buzzkill main site with list of reports on left and demo report on right](./public/images/readme/Buzzkill-ex1.png)
 
 Registered users can make a new report which will appear in the list of displayed reports by clicking the "Report New Event" button and filling out the form.
-![Buzzkill site report form](./public/images/readme/Buzzkill-ex2.PNG)
+![Buzzkill site report form](./public/images/readme/Buzzkill-ex2.png)
 
 ## Contributors:
 Contributors and github usernames<br>
